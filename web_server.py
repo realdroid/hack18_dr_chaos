@@ -11,17 +11,19 @@ def hello_world():
 
 @app.route('/process_input', methods=['POST'])
 def process_input():
-    src_loc = request.form['src_loc']
-    folder_list = request.form['folder_list']
-    output_loc = request.form['output_loc']
+    src_loc = request.form['src_clus']
+    folder_list = request.form['dest_clus']
+    output_loc = request.form['no_iter']
+    service = request.form['service']
+    op = request.form['op']
     print "*********************************"
     print src_loc
     print folder_list
     print output_loc
+    print service
+    print op
     print "*********************************"
-    flash('src_loc=%s\noutput_loc=%s\n' %(src_loc, output_loc))
     return render_template('/index.html')
-
 
 if __name__ == "__main__":
     app.secret_key = 'super secret key'

@@ -2,82 +2,44 @@
 <html>
 <body>
 <head>
-  <title>Entry Form</title>
+  <title>System Test Chaos as a service</title>
 </head>
-
-<form action="/process_input" method="post">
+<link rel="stylesheet" type="text/css" href="/static/css/stylesheet.css">
+<form method="post" action="/process_input">
     <div>
-    <h3>Enter Details</h3>
+    <h2>System Test Chaos as a service</h3>
     <div>
     <div>
-        <label for="src_loc">Enter location of Data Files</label>
-        <input type="text" id="src_loc" name="src_loc">
+        <label for="src_loc">Enter Cluster Names</label>
+        <input type="text" id="src_clus" name="src_clus">
+        <input type="text" id="dest_clus" name="dest_clus">
     </div>
-    <div>
-        <label for="folder_list">Enter list of folder names:</label>
-        <input type="text" id="folder_list" name="folder_list">
-    </div>
-    <div>
-        <label for="output_loc">Enter output location:</label>
-        <input type="text" id="output_loc" name="output_loc">
+  <div>
+    <label for="src_loc">Select Test</label>
+    <select id="service" name="service">
+    <option value="stop_cerebro">Stop Cerebro</option>
+    <option value="stop_magneto">Stop Merebro</option>
+    <option value="restart_cerebro">Restart Cerebro</option>
+    <option value="restart_magneto">Restart Magneto</option>
+    </select>
+ </div>
+<div>
+    <label for="src_loc">Enter Operation</label>
+  <select id="op" name="op">
+  <option value="migrate_protection_domain">Migrate Protection Domain</option>
+  <option value="activate_protection_domain">Activate Protection Domain</option>
+  <option value="enable_metro">Enable Metro</option>
+  <option value="disable_metro">Disable Metro</option>
+</select>
+ </div>
+     <div>
+        <label for="no_iter">Select Number of iterations</label>
+        <input type="text" id="no_iter" name="no_iter">
     </div>
     <div class="button">
         <button type="submit">RUN
         </button>
     </div>
 </form>
-
 </body>
-
-<style>
-form {
-  /* Just to center the form on the page */
-  margin: 0 auto;
-  width: 600px;
-  /* To see the outline of the form */
-  padding: 1em;
-  border: 4px solid #CCC;
-  border-radius: 1em;
-}
-
-form div + div {
-  margin-top: 1em;
-}
-
-label {
-  /* To make sure that all labels have the same size and are properly aligned */
-  display: inline-block;
-  width: 200px;
-  text-align: left;
-}
-
-input {
-  /* To make sure that all text fields have the same font settings
-     By default, textareas have a monospace font */
-  font: 1em sans-serif;
-
-  /* To give the same size to all text fields */
-  width: 300px;
-  box-sizing: border-box;
-
-  /* To harmonize the look & feel of text field border */
-  border: 1px solid #999;
-}
-
-input:focus {
-  /* To give a little highlight on active elements */
-  border-color: #000;
-}
-
-.button {
-  /* To position the buttons to the same position of the text fields */
-  /* padding-left: 90px; /* same size as the label elements */
-}
-
-button {
-  /* This extra margin represent roughly the same space as the space
-     between the labels and their text fields */
-  margin-left: .5em;
-}
-</style>
 </html>
